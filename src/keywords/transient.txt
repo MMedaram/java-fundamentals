@@ -1,0 +1,22 @@
+transient is a modifier used for variables.
+
+It tells Java:
+    “Do not serialize this field when writing the object to a stream.”
+👉 In simple words: A transient field’s value will not be saved when an object is serialized.
+
+Why do we need it?
+    When we serialize an object (convert it into bytes to store in file/database or send over network), some fields:
+        may be sensitive (like passwords).
+        may be temporary/cache values (not needed to persist).
+        may be non-serializable objects (like DB connections, Threads, Sockets).
+    For these, we mark them as transient.
+
+Default values after deserialization:
+    object → null
+    int → 0
+    boolean → false
+    double → 0.0
+Real-time use cases
+    Passwords / Security tokens → don’t store them in serialized files.
+    File handles, DB connections, Threads → can’t be serialized, so mark them transient.
+    Temporary/cache fields → like computed values that can be recalculated.

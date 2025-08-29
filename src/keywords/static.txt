@@ -1,0 +1,21 @@
+static means belongs to the class, not to individual objects.
+You can access static members without creating an object.Directly you can access them with class name.
+
+Static Variables
+    Shared across all objects of the class.
+    Memory allocated only once (in method area, not heap).
+
+Static Methods
+    Can be called without creating an object.
+    Cannot access non-static (instance) members directly.
+
+Static Blocks
+    Runs only once when the class is first loaded into memory.
+    Commonly used to initialize static variables.
+
+Static Classes
+    Only nested classes can be declared static (i.e., inner class inside another class).
+    A static nested class does not need an object of the outer class.
+
+static methods cannot use this or super (since they don’t belong to any instance).
+

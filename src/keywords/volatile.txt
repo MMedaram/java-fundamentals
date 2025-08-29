@@ -1,0 +1,11 @@
+volatile is a keyword/modifier you can apply to a variable.
+It tells the JVM and compiler:
+    “Always read/write this variable directly from main memory, not from CPU thread cache.”
+
+Normally in Java:
+    Each thread can keep its own copy of a variable in CPU cache.
+    If one thread updates it, other threads may not immediately see the new value.
+
+With volatile:
+    Every read/write goes straight to main memory.
+    All threads always see the most recent value.

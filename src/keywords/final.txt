@@ -1,0 +1,28 @@
+final means no change allowed:
+    Variable → value/reference cannot be reassigned.
+    Method → cannot be overridden.
+    Class → cannot be subclassed.
+
+For objects:
+    The reference cannot be changed.
+    But the object’s internal state can still change.
+
+        final StringBuilder sb = new StringBuilder("Mohan");
+        sb.append(" Rocks");  // ✅ allowed
+        // sb = new StringBuilder("New"); ❌ not allowed
+
+Blank final variable →
+    A final variable declared but not initialized must be initialized either in the constructor or in an initializer block.
+
+Final parameters →
+    A method parameter can be declared final, meaning you cannot reassign it inside the method.
+
+        void display(final int num) {
+            // num = 20; ❌ not allowed
+        }
+
+What final does not mean
+    It does not mean immutable in all cases.
+    Example: final List<String> list = new ArrayList<>();
+    You cannot assign a new list, but you can still add/remove elements.
+

@@ -1,0 +1,18 @@
+strictfp is a modifier in Java.
+It makes floating-point calculations (float, double) follow the IEEE 754 standard (a universal floating-point arithmetic standard).
+This ensures platform-independent results for floating-point operations.
+
+Why do we need it?
+    Different CPUs (Intel, AMD, ARM, etc.) may use different levels of precision (like 32-bit, 64-bit, or even 80-bit).
+    Without strictfp, the result of floating-point calculations may vary across platforms.
+    With strictfp, Java forces all floating-point math to stick to 32-bit for float and 64-bit for double, ensuring consistent results everywhere.
+
+Where can we use strictfp?
+    On classes
+    On interfaces
+    On methods
+    ❌ Not allowed on variables, constructors, or abstract methods.
+
+When to use it?
+    Use it when you want predictable, same results across all machines, especially in financial, scientific, or banking systems where precision matters.
+    In modern Java, it’s rarely used because the JVM already ensures consistent results in most cases.
